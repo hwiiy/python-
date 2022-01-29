@@ -15,25 +15,24 @@ class calc:
     result = self.first * self.second
     return result
 
-while True:
-  print("---------------------------------------------------")
-  print("1. 더하기\n2. 빼기\n3. 나누기\n4. 곱하기\n5. 전원끄기")
-  print("---------------------------------------------------")
-  menu = int(input ("원하는 항목을 누르세요. "))
-  if menu == 5:
-    print("계산기를 종료합니다.")
-    break
-  a,b = map(int,input("숫자를 입력하세요: ").split(" "))
-  num = calc(a,b)
-  print("---------------------------------------------------")
+class perfect_calc(calc):
+  def div(self):
+    result = self.first // self.second
+    return result
 
-  if menu == 1:
-    print("값:" , num.add())
-  elif menu == 2:
-    print("값:",num.dif())
-  elif menu == 3:
-    print("값:", num.div())
-  else :
-    print("값:", num.mul())
+print("일반 계산기 결과 값")
+a = calc(10,5)
+print("+",a.add())
+print("-",a.dif())
+print("%",a.div())
+print("*",a.mul())
+
+print("\n상속 계산기 결과 값")
+b = perfect_calc(10,5)
+print("+",b.add())
+print("-",b.dif())
+print("%",b.div())
+print("*",b.mul())
+
 
 
